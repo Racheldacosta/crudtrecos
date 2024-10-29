@@ -25,12 +25,12 @@ CREATE TABLE usuario(
     u_senha VARCHAR(63) NOT NULL,
     u_status ENUM ('on', 'off', 'del') DEFAULT 'on'
 
-)
+);
 -- Cria a tabela da entidade "treco"
  -- Prefixo dos atributos 
 CREATE TABLE treco(
-    t_id INT PRIMARY KEY auto_increment,
-    t_data TIMESTAMP DEFAULT  CURRENT_TIMESTAMP,
+    t_id INT PRIMARY KEY AUTO_INCREMENT,
+    t_data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     t_usuario INT NOT NULL,
     t_nome VARCHAR(127) NOT NULL,
     t_descricao TEXT,
