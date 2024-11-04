@@ -1,4 +1,4 @@
---- Apaga o banco de dados.
+-- Apaga o banco de dados.
 -- PERIGO! Só use isso em modo de desenvolvimento.
 DROP DATABASE IF EXISTS crudtrecos;
 
@@ -54,17 +54,19 @@ INSERT INTO usuario (
     'Joca da Silva',
     '2000-04-25',
     'jocasilva@email.com',
-    SHA1('Senha123')
+    SHA1('Senha123') -- Criptografa a senha do usuário
 ), (
     'Marineuza Siriliano',
     '2003-03-12',
     'marineuza@email.com',
-    SHA1('SENHA123')--criptografa a senha do usuário
-);(
-    'SETEMBRINO TROCATATAPAS',
-    '1998- 12-14',
-    'SETBRINO@EMAIL.COM',
-    SHA1('SENHA123')
+    SHA1('Senha123')
+), (
+    'Setembrino Trocatapas',
+    '1998-12-14',
+    'setbrino@email.com',
+    SHA1('Senha123')
+);
+
 -- Tabela 'treco'
 INSERT INTO treco (
     t_foto,
@@ -73,13 +75,13 @@ INSERT INTO treco (
     t_descricao,
     t_localizacao
 ) VALUES ( 
-    '1', 
-    'CANECA DE CAFÉ DO ELON MUSK', 
-    'UMA CANECA FEIA PRA CARACAS QUE ARRUMEI EM ALGUM LUGAR.', 
-    'NA ESTANTE DA SALA, PRATELEIRA DE BAIXO.'
-   ( 
-
-),   'https://picsum.photos/199',
+    'https://picsum.photos/200', 
+    '1', -- Id de um usuário existente
+    'Caneca de café do Elon Musk', 
+    'Uma caneca feia pra caracas que arrumei em algum lugar.', 
+    'Na estante da sala, prateleira de baixo.'
+), (
+    'https://picsum.photos/199',
     '1',
     'Caneca do Curintia',
     'Cabem 300 ml, mas está com a alça quebrada e colada com superbondi.',
@@ -98,4 +100,3 @@ INSERT INTO treco (t_foto, t_usuario, t_nome, t_descricao, t_localizacao) VALUES
     ('https://picsum.photos/208', '2', 'Estátua de Buda', 'Pequena estátua de Buda de madeira.', 'No altar da sala, cercada de velas.'),
     ('https://picsum.photos/209', '1', 'Bola de Futebol Autografada', 'Bola autografada por um jogador famoso.', 'Na estante da sala, prateleira de cima.'),
     ('https://picsum.photos/210', '2', 'Computador Retro', 'Computador antigo dos anos 80, ainda funcionando.', 'No escritório, em cima da mesa antiga.');
-
